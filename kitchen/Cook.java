@@ -6,7 +6,7 @@ import com.javarush.task.task27.task2712.ConsoleHelper;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Cook implements Observer
+public class Cook extends Observable implements Observer
 {
     public final String name;
     public Cook(String name)
@@ -18,14 +18,16 @@ public class Cook implements Observer
     {
         return name;
     }
-//    /**
-//     * @param //tablet (Observable) - объект, который отправил нам значение
-//     * @param //order (Object)- само значение, в нашем случае - это объект Order
-//     */
 
+    /**
+     * @param tablet (Observable) - объект, который отправил нам значение
+     * @param order (Object)- само значение, в нашем случае - это объект Order
+     */
     @Override
-    public void update(Observable observable, Object arg)
+    public void update(Observable tablet, Object order)
     {
-        ConsoleHelper.writeMessage("Start cooking - " + arg);
+        ConsoleHelper.writeMessage("Start cooking - " + order);
+        setChanged();
+        notifyObservers(order);
     }
 }
