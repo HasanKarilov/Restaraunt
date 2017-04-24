@@ -20,8 +20,3 @@ public enum Dish {
         return sb.toString();
     }
 }
-/*
-6. Чтобы пользователь мог выбрать себе блюда, нужно их все ему отобразить. Для этого в Dish создай метод
-public static String allDishesToString(), который сформирует строку из всех блюд.
-Пример: "Fish, Steak, Soup, Juice, Water". Формируй строку динамически.
- */
