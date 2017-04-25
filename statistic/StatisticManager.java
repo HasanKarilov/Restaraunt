@@ -1,12 +1,10 @@
 package com.javarush.task.task27.task2712.statistic;
 
+import com.javarush.task.task27.task2712.kitchen.Cook;
 import com.javarush.task.task27.task2712.statistic.event.EventDataRow;
 import com.javarush.task.task27.task2712.statistic.event.EventType;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /** С его помощью будем регистрировать события в хранилище
  * У нас должно быть одно хранилище с одной точкой входа
@@ -26,6 +24,7 @@ public class StatisticManager {
     }
 
     private StatisticStorage statisticStorage = new StatisticStorage();
+    private Set<Cook> cooks = new HashSet<>();
 
     private StatisticManager(){
     }
@@ -37,5 +36,8 @@ public class StatisticManager {
 
     public void register(EventDataRow data){
         this.statisticStorage.put(data);
+    }
+    public void register(Cook cook){
+        cooks.add(cook);
     }
 }

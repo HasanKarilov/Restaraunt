@@ -33,7 +33,7 @@ public class AdvertisementManager
         if (bestList.isEmpty())
         {
             throw new NoVideoAvailableException();
-        }
+         }
 
         Collections.sort(bestList, new Comparator<Advertisement>()
         {
