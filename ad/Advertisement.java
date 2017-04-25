@@ -31,6 +31,10 @@ public class Advertisement
         return amountPerOneDisplaying;
     }
 
+    public int getHits() {
+        return hits;
+    }
+
     public void revalidate() throws UnsupportedOperationException{
         if (hits <= 0) throw new UnsupportedOperationException();
         hits--;
