@@ -5,4 +5,5 @@ package com.javarush.task.task27.task2712.ad;
  * Он также будет взаимодействовать с плеером и отображать ролики
  */
 public class AdvertisementManager {
+    private final AdvertisementStorage storage = AdvertisementStorage.getInstance();
 }
