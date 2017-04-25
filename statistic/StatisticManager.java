@@ -19,6 +19,10 @@ public class StatisticManager {
                 storage.put(eventType, new ArrayList<EventDataRow>());
             }
         }
+        private void put(EventDataRow data){
+            //Получая значение по ключу добавляем данные
+            storage.get(data.getType()).add(data);
+        }
     }
 
     private StatisticStorage statisticStorage = new StatisticStorage();
@@ -32,7 +36,6 @@ public class StatisticManager {
     }
 
     public void register(EventDataRow data){
-
+        this.statisticStorage.put(data);
     }
-
 }
