@@ -23,6 +23,8 @@ public class Tablet extends Observable {
         try
         {
             Order order = new Order(this);
+            if(order.isEmpty())
+                return null;
             ConsoleHelper.writeMessage(order.toString());
             setChanged();
             notifyObservers(order);
